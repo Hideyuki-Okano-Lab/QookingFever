@@ -5,14 +5,15 @@
 
 # QookingFever
 Pipeline for converting FastQ files into count matrix
-:warning:
+
+:warning: **Work in Progress**: This tool is currently under active development and is not yet functional. We will notify all stakeholders once it is ready!
 
 ## User Guide
 1. Run:
 ```bash
 cookiecutter git@github.com:Hideyuki-Okano-Lab/QookingFever.git
 ```
->:bulb: Alternatively, with the shared desktop in the Room 3C at KRM, run the following code inside WLS:
+>:bulb: Tip: Alternatively, on the shared desktop in Room 3C at KRM, you can run the following commands inside WSL:
 >```bash
 >cd ~/develop
 >make countmatrix
@@ -22,12 +23,16 @@ cookiecutter git@github.com:Hideyuki-Okano-Lab/QookingFever.git
 
 ---
 ## For developpers
-0. Prerequisite: `poetry`
-1. Clone this repository
+0. Prerequisites: `poetry`
+1. Clone this repository:
+```bash
+git clone git@github.com:Hideyuki-Okano-Lab/QookingFever.git
+cd QookingFever
+```
 2. Run:
 ```bash
 poetry install
 poetry run pre-commit install
 ```
 
-:warning: 今の所、3Cの共用Desktopで動けばそれでいいと思っているので、他の環境は想定していません
+:warning: **Note**: Currently, this tool is specifically designed to run on the shared desktop in Room 3C. Other environments are not supported at this time.
