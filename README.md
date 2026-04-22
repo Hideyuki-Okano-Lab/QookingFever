@@ -5,20 +5,27 @@
 
 # QookingFever
 Pipeline for converting FastQ files into count matrix
+:warning:
 
 ## User Guide
-1. run:
-```
+1. Run:
+```bash
 cookiecutter git@github.com:Hideyuki-Okano-Lab/QookingFever.git
 ```
+>:bulb: Alternatively, with the shared desktop in the Room 3C at KRM, run the following code inside WLS:
+>```bash
+>cd ~/develop
+>make countmatrix
+>```
+
 2. work in progress...
 
 ---
 ## For developpers
-0. prerequisite: `poetry`
-1. clone this repository
-2. run:
-```
+0. Prerequisite: `poetry`
+1. Clone this repository
+2. Run:
+```bash
 poetry install
 poetry run pre-commit install
 ```
