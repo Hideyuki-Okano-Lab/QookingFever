@@ -54,5 +54,5 @@ jobs:
 
       - name: Test Apptainer Build (make build_env)
         run: |
-          cd ci_build_test
+          cd CI_Build_Test
           make build_env
