@@ -4,14 +4,14 @@ RECIPE = recipe.yaml
 DEFAULT_FA_SRC = "https://ftp.ensembl.org/pub/release-112/fasta/{{cookiecutter.species.lower()}}/dna/{{cookiecutter.species}}.{{cookiecutter.__ref}}.dna.primary_assembly.fa.gz"
 DEFAULT_GTF_SRC = "https://ftp.ensembl.org/pub/release-112/gtf/{{cookiecutter.species.lower()}}/{{cookiecutter.species}}.{{cookiecutter.__ref}}.112.gtf.gz"
 
-.PHONY: setup download_genome help run
+.PHONY: build_env setup download_genome help run
 
 help:
 	@echo "QookFast Pipeline Setup"
 	@echo "Usage: make setup"
 
 
-setup: $(CONTAINER)
+build_env: $(CONTAINER)
 	@if [ ! -f $(RECIPE) ]; then \
 		echo "--- [New Project Mode] ---"; \
 		echo "Generating $(RECIPE) from current environment..."; \
@@ -20,23 +20,26 @@ setup: $(CONTAINER)
 		echo "fa_file_source: $(DEFAULT_FA_SRC)" >> $(RECIPE); \
 		echo "gtf_file_source: $(DEFAULT_GTF_SRC)" >> $(RECIPE); \
 		apptainer exec $(CONTAINER) bash get_versions.sh >> $(RECIPE); \
-		$(MAKE) download_genome; \
 	else \
+		echo "Found $(RECIPE)."; \
 		echo "--- [Reproduction Mode] ---"; \
-		echo "Found $(RECIPE). Syncing reference genome..."; \
-		$(MAKE) download_genome; \
 	fi
+
+
+$(CONTAINER): $(DEF_FILE)
+	@echo "Building Apptainer container from $(DEF_FILE)..."
+	@sudo apptainer build $(CONTAINER) $(DEF_FILE)
+
+
+setup: build_env
+	@echo "Syncing reference genome..."
+	@$(MAKE) download_genome
 	@echo "============================================"
 	@echo " Setup complete! Let's QookFast!"
 	@echo " Move your .fastq.gz files to ./raw_data/"
 	@echo " To configure detailed pipeline parameters,"
 	@echo " manually edit ./run_pipeline.sh"
 	@echo "============================================"
-
-
-$(CONTAINER): $(DEF_FILE)
-	@echo "Building Apptainer container from $(DEF_FILE)..."
-	@sudo apptainer build $(CONTAINER) $(DEF_FILE)
 
 
 download_genome:
