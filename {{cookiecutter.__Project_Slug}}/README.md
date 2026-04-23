@@ -62,3 +62,6 @@ make run
     - Alignment files (`align/**/*.bam`)
     - Genome indices and FASTA files (`genome/*`)
 - **Storage Limit**: GitHub has strict file size limits. If you accidentally attempt to push these files, the operation will fail and may corrupt your local environment's Git state.
+
+---
+This project was created with [Cookiecutter](https://github.com/cookiecutter/cookiecutter) and [QookingFever](https://github.com/Hideyuki-Okano-Lab/QookingFever)
