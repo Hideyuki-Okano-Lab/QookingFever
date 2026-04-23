@@ -11,6 +11,10 @@ Pipeline for converting FastQ files into count matrix
 :warning: **Note**: Currently, this tool is specifically designed to run on the shared desktop in Room 3C. Other environments are not supported at this time.
 
 ## User Guide
+0. **Prerequisite**: Install `jinja2-time` via pip (this is already installed on the shared desktop in Room 3C):
+```bash
+pip install jinja2-time
+```
 1. Run:
 ```bash
 cookiecutter git@github.com:Hideyuki-Okano-Lab/QookingFever.git
@@ -21,19 +25,20 @@ cookiecutter git@github.com:Hideyuki-Okano-Lab/QookingFever.git
 >make countmatrix
 >```
 
-2. Answer to the prompts to configure project details
+2. Answer the prompts to configure project details
     - `project_name`: name of the project
     - `description`: description for the project
     - `author_name`: the owner name (probably your name)
     - `email`: the owner contact
-    - `species`: choose from `Homo_sapiens` or `Mus_mulculus`
+    - `species`: choose from `Homo_sapiens` or `Mus_musculus`
+    - `read_length`: read length (default: `150`)
     - `read_type`: choose from `single_end` or `pair_end`
     - `threads`: thread numbers (default: `8`)
     - `strand`: choose from `unstranded`, `stranded`, or `rev-stranded`
 
 :warning: **Important**: Please ensure you provide an accurate `project_name`, `author_name`, and `email`. This information is crucial for administrative purposes, such as contacting you for permission to clean up old projects when the shared desktop storage becomes full.
 
-:warning: **Note**: Parameters such as `read_type` and `strand` vary depending on the sequencing platform used. Please verify these details prior to configuration.
+:warning: **Note**: Parameters such as `read_length`, `read_type`, and `strand` vary depending on the sequencing platform used. Please verify these details prior to configuration.
 
 You'll have a directory like this:
 ```
@@ -78,7 +83,7 @@ make run
     - Genome indices and FASTA files (`genome/*`)
 - **Storage Limit**: GitHub has strict file size limits. If you accidentally attempt to push these files, the operation will fail and may corrupt your local environment's Git state.
 ---
-## For developpers
+## For developers
 0. Prerequisites: `poetry`
 1. Clone this repository:
 ```bash

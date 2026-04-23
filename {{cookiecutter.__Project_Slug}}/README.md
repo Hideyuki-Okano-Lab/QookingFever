@@ -14,6 +14,7 @@
 - species: `{{cookiecutter.species}}`
 - reference gemone: `{{cookiecutter.__ref}}`
 - reference genome version: `112`
+- read length: `{{cookiecutter.read_length}}`
 - read type: `{{cookiecutter.read_type}}`
 - strand: `{{cookiecutter.strand}}`
 - thred numbers: `{{cookiecutter.threads}}`
