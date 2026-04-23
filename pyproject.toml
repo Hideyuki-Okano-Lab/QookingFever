@@ -1,5 +1,5 @@
 [project]
-name = "qookingfever"
+name = "qookfast"
 version = "0.1.0"
 description = "Pipeline for converting FastQ files into count matrix"
 authors = [
@@ -10,6 +10,7 @@ requires-python = ">=3.11"
 dependencies = [
     "jinja2-time (>=0.2.0,<0.3.0)"
 ]
+package-mode = false
 
 
 [build-system]
