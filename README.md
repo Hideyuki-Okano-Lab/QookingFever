@@ -46,8 +46,6 @@ cookiecutter git@github.com:Hideyuki-Okano-Lab/QookFast.git
     - `threads`: thread numbers (default: `4`)
     - `strand`: choose from `unstranded`, `stranded`, or `rev-stranded`
 
-:warning: **Important**: Please ensure you provide an accurate `project_name`, `author_name`, and `email`. This information is crucial for administrative purposes, such as contacting you for permission to clean up old projects when the shared desktop storage becomes full.
-
 :warning: **Note**: Parameters such as `read_length`, `read_type`, and `strand` vary depending on the sequencing platform used. Please verify these details prior to configuration.
 
 You'll have a directory like this:
