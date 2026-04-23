@@ -1,0 +1,45 @@
+Bootstrap: docker
+From: ubuntu:22.04
+
+%labels
+    Author {{cookiecutter.author_name}}
+    Version 1.0.0
+    Project_Name {{cookiecutter.project_name}}
+    Description "{{cookiecutter.description}}"
+
+%environment
+    export LC_ALL=C
+    export LANG=C
+    export PATH=/usr/local/bin:$PATH
+
+%post
+    export DEBIAN_FRONTEND=noninteractive
+
+    apt-get update && apt-get upgrade -y
+    apt-get install -y --no-install-recommends \
+        build-essential \
+        wget \
+        curl \
+        unzip \
+        pigz \
+        samtools \
+        ca-certificates
+
+    apt-get clean
+    rm -rf /var/lib/apt/lists/*
+
+%runscript
+    exec "$@"
+
+%test
+    echo "Checking installed tools..."
+    samtools --version | head -n 1
+    pigz --version
+    wget --version | head -n 1
+
+%help
+    {{cookiecutter.project_name}} Container Engine
+    {{"-" for v in cookiecutter.project_name}}-----------------
+    This container encapsulates all necessary tools for the QookFast pipeline in {{cookiecutter.project_name}}.
+    Usage:
+        apptainer exec {{cookiecutter.__Project_Slug.lower()}}.sif [command]
