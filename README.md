@@ -9,14 +9,33 @@ Pipeline for converting FastQ files into count matrix
 
 :warning: **Note**: Currently, this tool is specifically designed to run on the shared desktop in Room 3C. Other environments are not supported at this time.
 
-## User Guide
-0. **Prerequisite**: Install `jinja2-time` via pip (this is already installed on the shared desktop in Room 3C):
+## Prerequisites
+Before you begin, ensure you have the following installed on your system (Note: These are already configured on the Room 3C shared desktop):
+- **Git**: For version control.
+- **Apptainer**: Required for containerized, reproducible execution.
+- **Python 3 & pip**: Required to install the template engine.
+- **Cookiecutter & jinja2-time**: Required for project configuration in QookFast.
+
+**For macOS**
+
+Using [Homebrew](https://brew.sh/) is the easiest way:
 ```bash
-pip install jinja2-time
+brew install git apptainer
+pip install cookiecutter jinja2-time
 ```
+
+**For Windows (WSL2 / Ubuntu)**
+
+Run the following command to install all the prerequisites at once:
+```bash
+sudo apt update && sudo apt install -y git apptainer python3 python3-pip
+pip install cookiecutter jinja2-time
+```
+
+## User Guide
 1. Run:
 ```bash
-cookiecutter git@github.com:Hideyuki-Okano-Lab/QookingFever.git
+cookiecutter git@github.com:Hideyuki-Okano-Lab/QookFast.git
 ```
 >:bulb: Tip: Alternatively, on the shared desktop in Room 3C at KRM, you can run the following commands inside WSL:
 >```bash
@@ -54,11 +73,11 @@ You'll have a directory like this:
     │   └── (fastp outputs will be generated here)
     ├── raw_data/
     │   └── (manually move your .fastq.gz files here)
+    ├── <your_project_name>.def
     ├── get_versions.sh
     ├── Makefile
     ├── README.md
-    ├── run_pipeline.sh
-    └── software_versions.yaml
+    └── run_pipeline.sh
 ```
 
 3. Run:
@@ -83,11 +102,11 @@ make run
 - **Storage Limit**: GitHub has strict file size limits. If you accidentally attempt to push these files, the operation will fail and may corrupt your local environment's Git state.
 ---
 ## For developers
-0. Prerequisites: `poetry`
+0. Additional prerequisite: `poetry`
 1. Clone this repository:
 ```bash
-git clone git@github.com:Hideyuki-Okano-Lab/QookingFever.git
-cd QookingFever
+git clone git@github.com:Hideyuki-Okano-Lab/QookFast.git
+cd QookFast
 ```
 2. Run:
 ```bash
