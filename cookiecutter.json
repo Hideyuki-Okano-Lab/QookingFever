@@ -8,6 +8,7 @@
     "__timestamp": "{% now 'local', '%Y-%m-%d %H:%M:%S' %}",
     "species": ["Homo_sapiens", "Mus_musculus"],
     "__ref": "{{ 'GRCh38' if cookiecutter.species == 'Homo_sapiens' else 'GRCm39' }}",
+    "read_length": 150,
     "read_type": ["single_end", "pair_end"],
     "threads": 8,
     "strand": ["unstranded", "stranded", "rev-stranded"]
