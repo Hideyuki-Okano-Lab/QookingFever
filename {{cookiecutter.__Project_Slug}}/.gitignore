@@ -1,0 +1,9 @@
+# Data files
+*.fastq.gz
+*.fastq
+*.fa.gz
+*.fa
+*.gtf.gz
+*.gtf
+*.bam
+*.txt
