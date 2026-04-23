@@ -49,7 +49,7 @@ You'll have a directory like this:
     ├── qc/
     │   └── (fastp outputs will be generated here)
     ├── raw_data/
-    │   └── (:bulb: manually move your .fastq.gz files here)
+    │   └── (manually move your .fastq.gz files here)
     ├── get_versions.sh
     ├── Makefile
     ├── README.md
