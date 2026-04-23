@@ -1,9 +1,8 @@
 <h1 align="center">
-<img src=https://github.com/Hideyuki-Okano-Lab/QookingFever/blob/main/logo/logo.png?raw=true width="500">
+<img src=https://github.com/Hideyuki-Okano-Lab/QookFast/blob/main/logo/logo.png?raw=true width="400">
 </h1><br>
 
-
-# QookingFever
+# QookFast
 Pipeline for converting FastQ files into count matrix
 
 :warning: **Work in Progress**: This tool is currently under active development and is not yet guaranteed to be fully functional. We will notify all stakeholders once it is ready!
