@@ -7,7 +7,7 @@
 Got raw FastQ files but dreading the pipeline setup? I feel you. And the headache doesn't stop there—modern science demands your entire environment to be 100% reproducible. But here’s your ultimate hack: grab this preset template and spin up a fully automated, containerized RNA-seq pipeline. Absolute reproducibility, perfectly packed into one box, and ready to serve in just a few keystrokes. Launch your project with this one-liner pipeline, the data will be ready to go! Enjoy "qooking" biology!
 
 ## Prerequisites
-Before you begin, ensure you have the following installed on your system (Note: These are already configured on the Room 3C shared desktop):
+Before you begin, ensure you have the following installed on your system:
 - **Git**: For version control.
 - **Apptainer**: Required for containerized, reproducible execution.
 - **Python 3 & pip**: Required to install the template engine.
