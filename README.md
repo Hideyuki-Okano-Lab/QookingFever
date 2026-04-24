@@ -2,6 +2,9 @@
 <img src=https://github.com/yo-aka-gene/QookFast/blob/main/logo/logo.png?raw=true width="400">
 </h1><br>
 
+![QookFast Version](https://img.shields.io/github/v/tag/yo-aka-gene/QookFast?label=BasalCell&color=blue)
+
+
 # QookFast: The "Bento" Pipeline for converting FastQ files into a count matrix.
 
 Got raw FastQ files but dreading the pipeline setup? I feel you. And the headache doesn't stop there—modern science demands your entire environment to be 100% reproducible. But here’s your ultimate hack: grab this preset template and spin up a fully automated, containerized RNA-seq pipeline. Absolute reproducibility, perfectly packed into one box, and ready to serve in just a few keystrokes. Launch your project with this one-liner pipeline, the data will be ready to go! Enjoy "qooking" biology!
