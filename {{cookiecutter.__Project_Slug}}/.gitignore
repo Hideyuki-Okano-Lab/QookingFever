@@ -1,3 +1,6 @@
+# Apptainer / Singularity images
+*.sif
+
 # Data files
 *.fastq.gz
 *.fastq
