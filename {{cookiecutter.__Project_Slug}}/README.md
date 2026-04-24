@@ -55,9 +55,14 @@ make setup
 make run
 ```
 
+### Note on Reproducibility
+QookFast downloads the latest tools at the time of initialization to build your `.sif` container. To ensure absolute reproducibility for your collaborators, please secure an external method to store and share your generated `.sif` file (e.g., Google Drive, Zenodo, or AWS S3). Since `.sif` files are too large for GitHub, you cannot push them like regular code files, meaning your collaborators won't be able to simply clone them.
+
+
 ### :octocat: Git and Large Files
 - **Automatic Initialization**: `git init` is automatically performed upon project creation. You can start tracking your scripts immediately.
 - **NEVER Push Large Files**: Do not add or push large biological data to GitHub. This includes:
+    - Apptainer container (`*.sif`)
     - Raw data (`raw_data/*.fastq.gz`)
     - Processed QC data (`qc/*.fastq.gz`)
     - Alignment files (`align/**/*.bam`)
@@ -82,25 +87,32 @@ make run
     ├── raw_data/
     │   └── (manually move your .fastq.gz files here)
     ├── {{cookiecutter.__Project_Slug.lower()}}.def
-    ├── {{cookiecutter.__Project_Slug.lower()}}.sif
     ├── get_versions.sh
     ├── Makefile
     ├── README.md
     ├── recipe.yaml
     └── run_pipeline.sh
 ```
-
-1. Run:
+3. Enter the project directory:
 ```bash
 cd {{cookiecutter.__Project_Slug}}
+```
+4. Make sure you move the downloaded .sif file into this current directory. Replace `<path_to_downloaded_sif>` with the actual path where you saved the file (e.g., `~/Downloads/`):
+```bash
+mv <path_to_downloaded_sif>/{{cookiecutter.__Project_Slug.lower()}}.sif .
+```
+5. Run (Do NOT use `make build_env`):
+```bash
 make setup
 ```
-
-2. Move all your `.fastq.gz` files into the `raw_data/` directory.
-3. Run:
+6. Move all your `.fastq.gz` files into the `raw_data/` directory.
+7. Run:
 ```
 make run
 ```
+
+### Note on Reproducibility
+To perfectly reproduce the computational environment of this repository, you need the original `.sif` file. Since `.sif` files are too large for GitHub, it is not included in this repository by default. To ensure absolute reproducibility, **do not rebuild the container (doing so will fetch newer versions of the tools and break the original environment).** Please request the exact `.sif` file directly from the repository owner and place it inside this directory before running the pipeline.
 
 ---
 This project was created with [Cookiecutter](https://github.com/cookiecutter/cookiecutter) and [QookFast](git@github.com:yo-aka-gene/QookFast.git)

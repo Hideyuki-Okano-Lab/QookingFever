@@ -46,6 +46,8 @@ cookiecutter git@github.com:yo-aka-gene/QookFast.git
     - `threads`: thread numbers (default: `4`)
     - `strand`: choose from `unstranded`, `stranded`, or `rev-stranded`
 
+:warning: **Important**: Please ensure you provide an accurate `project_name`, `author_name`, and `email` during the initialization. Since the `.sif` container file required for absolute reproducibility is too large to be hosted on GitHub, leaving accurate contact information is essential. This allows future collaborators to easily reach out and request the original container file from you.
+
 :warning: **Note**: Parameters such as `read_length`, `read_type`, and `strand` vary depending on the sequencing platform used. Please verify these details prior to configuration.
 
 You'll have a directory like this:
@@ -82,9 +84,14 @@ make setup
 make run
 ```
 
+### Note on Reproducibility
+QookFast downloads the latest tools at the time of initialization to build your `.sif` container. To ensure absolute reproducibility for your collaborators, please secure an external method to store and share your generated `.sif` file (e.g., Google Drive, Zenodo, or AWS S3). Since `.sif` files are too large for GitHub, you cannot push them like regular code files, meaning your collaborators won't be able to simply clone them.
+
+
 ### :octocat: Git and Large Files
 - **Automatic Initialization**: `git init` is automatically performed upon project creation. You can start tracking your scripts immediately.
 - **NEVER Push Large Files**: Do not add or push large biological data to GitHub. This includes:
+    - Apptainer container (`*.sif`)
     - Raw data (`raw_data/*.fastq.gz`)
     - Processed QC data (`qc/*.fastq.gz`)
     - Alignment files (`align/**/*.bam`)
