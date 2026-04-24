@@ -103,4 +103,4 @@ make run
 ```
 
 ---
-This project was created with [Cookiecutter](https://github.com/cookiecutter/cookiecutter) and [QookFast](https://github.com/Hideyuki-Okano-Lab/QookFast)
+This project was created with [Cookiecutter](https://github.com/cookiecutter/cookiecutter) and [QookFast](git@github.com:yo-aka-gene/QookFast.git)

@@ -1,5 +1,5 @@
 <h1 align="center">
-<img src=https://github.com/Hideyuki-Okano-Lab/QookFast/blob/main/logo/logo.png?raw=true width="400">
+<img src=https://github.com/yo-aka-gene/QookFast/blob/main/logo/logo.png?raw=true width="400">
 </h1><br>
 
 # QookFast: The "Bento" Pipeline for converting FastQ files into a count matrix.
@@ -32,7 +32,7 @@ pip install cookiecutter jinja2-time
 ## User Guide
 1. Run:
 ```bash
-cookiecutter git@github.com:Hideyuki-Okano-Lab/QookFast.git
+cookiecutter git@github.com:yo-aka-gene/QookFast.git
 ```
 
 2. Answer the prompts to configure project details
@@ -95,7 +95,7 @@ make run
 0. Additional prerequisite: `poetry`
 1. Clone this repository:
 ```bash
-git clone git@github.com:Hideyuki-Okano-Lab/QookFast.git
+git clone git@github.com:yo-aka-gene/QookFast.git
 cd QookFast
 ```
 2. Run:
